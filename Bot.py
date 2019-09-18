@@ -4,27 +4,24 @@ from config import *
 from mcstatus import MinecraftServer
 from discord.ext import commands
 
-server = MinecraftServer("142.234.204.92", 32436)
-# status = server.status()
-
+server = MinecraftServer(server_ip, server_port)
 prefix = "%"
-
 bot = commands.Bot(command_prefix=prefix, help_command=None)
 
-
+# Bot is ready
 @bot.event
 async def on_ready():
     print('Logged on as {0}!'.format(bot.user))
     await bot.change_presence(activity=discord.Game(name="%help"))
 
-
+# Help command
 @bot.command()
 async def help(ctx):
     help = ">>> **%status:** Shows if the server is online\n**%players:** Shows number of players online\n" \
            "**%craft <item>**: Shows the crafting recipe for the item"
     await ctx.channel.send(help)
 
-
+# How many players are online on the server
 @bot.command(name='online')
 async def online(ctx):
     try:
@@ -33,7 +30,7 @@ async def online(ctx):
     except:
         await ctx.channel.send("Error")
 
-
+# Shows crafting recipe for item, gets image from minecraftcrafting.info
 @bot.command(name='craft')
 async def craft(ctx, arg):
     link = "https://www.minecraftcrafting.info/imgs/craft_" + arg.lower()
@@ -47,7 +44,7 @@ async def craft(ctx, arg):
         link = "Invalid, or it has some weird name I haven't accounted for yet"
     await ctx.channel.send(link)
 
-
+# Checks whether the server is online or offline and outputs the ping
 @bot.command(name='status')
 async def status(ctx):
     try:
