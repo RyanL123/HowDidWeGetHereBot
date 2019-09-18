@@ -1,15 +1,15 @@
 import discord
 from mcstatus import MinecraftServer
 
-server = MinecraftServer("142.234.204.92", 32436)
+server = MinecraftServer("142.234.204.92",32436)
 status = server.status()
-# query = server.query()
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('Logged on as {0}!'.format(client.user))
+		print('Logged on as {0}!'.format(client.user))
+		await client.change_presence(activity=discord.Game(name="%help"))
 
 
 @client.event
@@ -21,11 +21,8 @@ async def on_message(message):
         except:
             await message.channel.send(":x: Server is offline")
     if message.content == "%help":
-        await message.channel.send("> **%status:** shows if the server is online")
-        await message.channel.send("> **%players:** shows number of players online")
+        await message.channel.send("> **%status:** shows if the server is online \n > **%players:** shows number of players online")
     if message.content == "%players":
         await message.channel.send("There are %i players on the server" % status.players.online)
-    # if message.content == "%players":
-    #     await message.channel.send("The server has the following players online: {0}".format(", ".join(query.players.names)))
 
 client.run('NTA3MzU1NjQ2MzIwOTY3Njgy.XX_Nbw.QM51zAdqPp-X8xJxxy7_PxMZ8Ys')
