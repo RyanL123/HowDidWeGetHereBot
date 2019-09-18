@@ -25,4 +25,4 @@ async def on_message(message):
     if message.content == "%players":
         await message.channel.send("There are %i players on the server" % status.players.online)
 
-client.run('NTA3MzU1NjQ2MzIwOTY3Njgy.XX_Nbw.QM51zAdqPp-X8xJxxy7_PxMZ8Ys')
+client.run('NTA3MzU1NjQ2MzIwOTY3Njgy.XYGWTw.kr5VLTLzr_WY9kMXwAS2bLxHdno')
