@@ -11,8 +11,7 @@ including the hidden "How Did We Get Here?" achievement.
 
 ### Show Server Status (%status)
 
-Outputs either
-
+**Output**
 > :white_check_mark: Server is online with a ping of (milliseconds) ms
 
 Or 
@@ -21,11 +20,18 @@ Or
 
 ### Show Players Online (%online)
 
+**Output**
 > There are x players on the server
 
 ### Show Recipe (%craft)
 
+**Output**
 > www.minecraftcrafting.info/imgs/craft_ + (item name) + (file extension)
 
+### Show Minecraft Wiki (%wiki)
+
+**Output**
+>  https://minecraft.gamepedia.com/ + (input)
+
 Alternatively, run the %help command to see what each
-command does
+command does.
