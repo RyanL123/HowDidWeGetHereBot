@@ -24,6 +24,7 @@ async def help(ctx):
     help.append("**%online:** Shows number of players online")
     help.append("**%craft <item>**: Shows the crafting recipe for the item")
     help.append("**%wiki <input>:** Shows the Minecraft Wiki page for the given input")
+    help.append("*For more information, visit my GitHub https://github.com/RyanL123/HowDidWeGetHereBot*")
     for i in help:
         help_output += i
         help_output += "\n\n"
@@ -74,6 +75,7 @@ async def status(ctx):
 @bot.command(name='wiki')
 async def status(ctx, *arg):
     ending = ""
+    # add underscores to separate words
     for i in range(len(arg)):
         ending += arg[i].lower().capitalize()
         if i != len(arg)-1:
@@ -85,15 +87,5 @@ async def status(ctx, *arg):
     else:
         await ctx.channel.send("Please try again")
     print("wiki")
-
-
-@bot.command(name='paid')
-async def paid(ctx, user: discord.user, paid_status):
-    role = get(ctx.server.roles, name="Paid")
-    if paid_status.upper() == "PAID":
-        await bot.add_role(user, role)
-    else:
-        await bot.remove_role(user, role)
-
 
 bot.run(api_key)
