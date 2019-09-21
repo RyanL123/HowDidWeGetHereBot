@@ -1,0 +1,20 @@
+>>> **Parameters (None)**
+
+**What it does**
+
+- Shows whether if the server is online or offline
+
+- Shows the ping of the server
+
+**What it can't do**
+
+- Get the status of any other server (not configurable)
+
+- Get the total uptime of the server
+
+**Output**
+:white_check_mark: Server is online with a ping of (milliseconds) ms
+
+Or
+
+:x: Server is offline

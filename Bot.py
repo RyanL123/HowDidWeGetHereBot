@@ -17,19 +17,30 @@ async def on_ready():
 
 # Help command
 @bot.command()
-async def help(ctx):
-    help_output = ""
-    help = []
-    help.append(">>> **%status:** Shows if the server is online")
-    help.append("**%online:** Shows number of players online")
-    help.append("**%craft <item>**: Shows the crafting recipe for the item")
-    help.append("**%wiki <input>:** Shows the Minecraft Wiki page for the given input")
-    help.append("*For more information, visit my GitHub https://github.com/RyanL123/HowDidWeGetHereBot*")
-    for i in help:
-        help_output += i
-        help_output += "\n\n"
+async def help(ctx, arg="default"):
+    if arg == "default":
+        file = open("help_text/help_default.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "online":
+        file = open("help_text/help_online.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "craft":
+        file = open("help_text/help_craft.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "wiki":
+        file = open("help_text/help_wiki.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "status":
+        file = open("help_text/help_status.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    else:
+        help.append("No such command")
 
-    await ctx.channel.send(help_output)
     print("help")
 
 # How many players are online on the server
@@ -45,6 +56,11 @@ async def online(ctx):
 # Shows crafting recipe for item, gets image from minecraftcrafting.info
 @bot.command(name='craft')
 async def craft(ctx, *arg):
+    if len(arg) != 0 and arg[0].upper() == "BELL":
+        file = open("help_text/craft_bell.txt", "r")
+        data = file.read().replace("\n", "")
+        await ctx.channel.send(data)
+        return
     ending = ""
     for i in range(len(arg)):
         ending += arg[i].lower()
@@ -56,7 +72,7 @@ async def craft(ctx, *arg):
     elif requests.get(link + ".gif").status_code != 404:
         link += ".gif"
     else:
-        link = "Invalid, or it has some weird name I haven't accounted for yet"
+        link = "Please try again"
     await ctx.channel.send(link)
     print("craft")
 

@@ -11,6 +11,20 @@ including the hidden "How Did We Get Here?" achievement.
 
 ### Show Server Status (%status)
 
+#### Parameters (None)
+
+#### Functionality
+
+**What it does**
+
+- Shows whether if the server is online or offline
+- Shows the ping of the server
+
+**What it can't do**
+
+- Get the status of any other server (not configurable)
+- Get the total uptime of the server
+
 **Output**
 > :white_check_mark: Server is online with a ping of (milliseconds) ms
 
@@ -20,15 +34,61 @@ Or
 
 ### Show Players Online (%online)
 
+#### Parameters (None)
+
+#### Functionality
+
+**What it does**
+
+- Shows the number of players in the server
+
+**What it can't do**
+
+- Get the specific player names of each person in the server
+- Who is afk and who isn't
+
 **Output**
 > There are x players on the server
 
 ### Show Recipe (%craft)
 
+#### Parameters (Item)
+
+**Item:** Item you want to get the recipe for
+
+#### Functionality
+
+**What it does**
+
+- Show the crafting recipe of the given item
+- Might not work for some items such as quartz block 
+(labeled as blockofquartz instead)
+
+**What it can't do**
+
+- Show potion brewing recipes
+- Craft uncraftable items (bell)
+- Fix your spelling mistakes (must spell the name of item correctly)
+
 **Output**
 > www.minecraftcrafting.info/imgs/craft_ + (item name) + (file extension)
 
 ### Show Minecraft Wiki (%wiki)
+
+#### Parameters (Input)
+
+**Input:** Thing you want to get wiki page for
+
+#### Functionality
+
+**What it does**
+
+- Show the official Minecraft Wiki page for the given input
+
+**What it can't do**
+
+- Get specific metadata from a web page
+- Fix your spelling mistakes (spelling must be exact same as wiki)
 
 **Output**
 >  https://minecraft.gamepedia.com/ + (input)

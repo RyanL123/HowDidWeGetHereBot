@@ -1,0 +1,21 @@
+>>> **Parameters (Item)**
+
+**Item:** Item you want to get the recipe for
+
+**What it does**
+
+- Show the crafting recipe of the given item
+
+- Might not work for some items such as quartz block 
+(labeled as blockofquartz instead)
+
+**What it can't do**
+
+- Show potion brewing recipes
+
+- Craft uncraftable items (bell)
+
+- Fix your spelling mistakes (must spell the name of item correctly)
+
+**Output**
+www.minecraftcrafting.info/imgs/craft_ + (item name) + (file extension)

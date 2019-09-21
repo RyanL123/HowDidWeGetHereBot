@@ -1,0 +1,11 @@
+>>> **Use %help (command) for a depth description of the command**
+
+**%status:** Shows if the server is online
+
+**%online:** Shows number of players online
+
+**%craft <item>**: Shows the crafting recipe for the item
+
+**%wiki <input>:** Shows the Minecraft Wiki page for the given input
+
+*For more information, visit my GitHub https://github.com/RyanL123/HowDidWeGetHereBot*

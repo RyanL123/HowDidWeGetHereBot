@@ -1,0 +1,16 @@
+>>> **Parameters (Input)**
+
+**Input:** Thing you want to get wiki page for
+
+**What it does**
+
+- Show the official Minecraft Wiki page for the given input
+
+**What it can't do**
+
+- Get specific metadata from a web page
+
+- Fix your spelling mistakes (spelling must be exact same as wiki)
+
+**Output**
+https://minecraft.gamepedia.com/ + (input)
