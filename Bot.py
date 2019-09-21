@@ -3,7 +3,6 @@ import requests
 from config import *
 from mcstatus import MinecraftServer
 from discord.ext import commands
-from discord.utils import get
 
 server = MinecraftServer(server_ip, server_port)
 prefix = "%"

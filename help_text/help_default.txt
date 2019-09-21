@@ -1,4 +1,4 @@
->>> **Use %help (command) for a depth description of the command**
+>>> **Use %help (command) for a in depth description of the command**
 
 **%status:** Shows if the server is online
 
