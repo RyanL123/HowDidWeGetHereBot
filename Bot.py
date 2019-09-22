@@ -2,7 +2,9 @@ import discord
 import requests
 from config import *
 from mcstatus import MinecraftServer
-from discord.ext import commands
+from discord.ext import commands, tasks
+from discord.utils import get
+import datetime
 
 server = MinecraftServer(server_ip, server_port)
 prefix = "%"
@@ -13,6 +15,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None)
 async def on_ready():
     print('Logged on as {0}!'.format(bot.user))
     await bot.change_presence(activity=discord.Game(name="%help"))
+    test.start()
 
 # Help command
 @bot.command()
@@ -47,7 +50,10 @@ async def help(ctx, arg="default"):
 async def online(ctx):
     try:
         response = server.status().players.online
-        await ctx.channel.send("There are %i players on the server" % response)
+        if response == 1:
+            await ctx.channel.send("There is 1 player on the server")
+        else:
+            await ctx.channel.send("There are %i players on the server" % response)
     except:
         await ctx.channel.send("Error")
     print("online")
@@ -102,5 +108,53 @@ async def status(ctx, *arg):
     else:
         await ctx.channel.send("Please try again")
     print("wiki")
+
+# Notifies everyone who hasn't paid this month yet
+@bot.command(pass_contex=True)
+async def paid(ctx):
+    message_server = ctx.message.guild
+
+    # Initialize roles
+    bot_id = get(message_server.roles, name="Bot")
+    paid_id = get(message_server.roles, name="Paid")
+    all_paid = True
+
+    # Iterates through every member and check for their paid role. Ignores bots
+    for member in message_server.members:
+        if bot_id not in member.roles and paid_id not in member.roles:
+            member_id = member.id
+            await ctx.channel.send("<@%i> has not paid this month!" % member_id)
+            all_paid = False
+    if all_paid:
+        await ctx.channel.send(":tada: Everybody paid this month!")
+
+
+# @bot.command(name='role', pass_context=True)
+# async def give_role(ctx, member: discord.Member):
+#     message_server = ctx.message.guild
+#     member_id = member.id
+#     for i in message_server.members:
+#         if i.id == member_id:
+#             role = get(message_server.roles, name="Test")
+#             await i.add_roles(role)
+#             break
+
+# Removes every paid role at the 10th of every month
+async def remove_all():
+    message_server = get(bot.guilds, name="How Did We Get Here?")
+    role = get(message_server.roles, name="Paid")
+    for i in message_server.members:
+        if role in i.roles:
+            await i.remove_roles(role)
+
+
+@tasks.loop(hours=1)
+async def test():
+    time = datetime.datetime.now()
+    hour = int(time.hour)
+    day = int(time.day)
+    if day == 10 and hour == 1:
+        await remove_all()
+
 
 bot.run(api_key)

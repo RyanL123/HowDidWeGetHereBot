@@ -3,17 +3,17 @@
 This bot was created to assist in a private
 Minecraft Discord Server. It has many utility
 functions that only work for 
-1 server and is not configurable. The aim of 
+the specific server and is not configurable. The aim of 
 the Minecraft Server is to obtain every achievement,
 including the hidden "How Did We Get Here?" achievement.
 
-## Commands (Used with % prefix)
+# Commands (Used with % prefix)
 
-### Show Server Status (%status)
+## Show Server Status (%status)
 
-#### Parameters (None)
+### Parameters (None)
 
-#### Functionality
+### Functionality
 
 **What it does**
 
@@ -32,11 +32,11 @@ Or
 
 > :x: Server is offline
 
-### Show Players Online (%online)
+## Show Players Online (%online)
 
-#### Parameters (None)
+### Parameters (None)
 
-#### Functionality
+### Functionality
 
 **What it does**
 
@@ -50,13 +50,13 @@ Or
 **Output**
 > There are x players on the server
 
-### Show Recipe (%craft)
+## Show Recipe (%craft)
 
-#### Parameters (Item)
+### Parameters (Item)
 
 **Item:** Item you want to get the recipe for
 
-#### Functionality
+### Functionality
 
 **What it does**
 
@@ -67,19 +67,19 @@ Or
 **What it can't do**
 
 - Show potion brewing recipes
-- Craft uncraftable items (bell)
-- Fix your spelling mistakes (must spell the name of item correctly)
+- Craft uncraftable items (example: bell)
+- Fix your spelling mistakes (item name must be spelt correctly)
 
 **Output**
 > www.minecraftcrafting.info/imgs/craft_ + (item name) + (file extension)
 
-### Show Minecraft Wiki (%wiki)
+## Show Minecraft Wiki (%wiki)
 
-#### Parameters (Input)
+### Parameters (Input)
 
 **Input:** Thing you want to get wiki page for
 
-#### Functionality
+### Functionality
 
 **What it does**
 
@@ -93,5 +93,4 @@ Or
 **Output**
 >  https://minecraft.gamepedia.com/ + (input)
 
-Alternatively, run the %help command to see what each
-command does.
+### Alternatively, run the %help command to see what each command does.

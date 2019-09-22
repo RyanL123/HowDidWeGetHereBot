@@ -13,9 +13,9 @@
 
 - Show potion brewing recipes
 
-- Craft uncraftable items (bell)
+- Craft uncraftable items (example: bell)
 
-- Fix your spelling mistakes (must spell the name of item correctly)
+- Fix your spelling mistakes (item name must be spelt correctly)
 
 **Output**
 www.minecraftcrafting.info/imgs/craft_ + (item name) + (file extension)
