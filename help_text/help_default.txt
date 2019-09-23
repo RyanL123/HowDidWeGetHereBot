@@ -8,4 +8,8 @@
 
 **%wiki <input>:** Shows the Minecraft Wiki page for the given input
 
+**%paid:** Shows who has NOT paid this month
+
+**%update:** Shows the latest update to the bot
+
 *For more information, visit my GitHub https://github.com/RyanL123/HowDidWeGetHereBot*

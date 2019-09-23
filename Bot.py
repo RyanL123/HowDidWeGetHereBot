@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None)
 @bot.event
 async def on_ready():
     print('Logged on as {0}!'.format(bot.user))
-    await bot.change_presence(activity=discord.Game(name="%help"))
+    await bot.change_presence(activity=discord.Game(name="%help | %update"))
     test.start()
 
 # Help command
@@ -38,6 +38,14 @@ async def help(ctx, arg="default"):
         await ctx.channel.send(data)
     elif arg == "status":
         file = open("help_text/help_status.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "update":
+        file = open("help_text/help_update.txt", "r")
+        data = file.read()
+        await ctx.channel.send(data)
+    elif arg == "paid":
+        file = open("help_text/help_paid.txt", "r")
         data = file.read()
         await ctx.channel.send(data)
     else:
@@ -138,6 +146,12 @@ async def paid(ctx):
 #             role = get(message_server.roles, name="Test")
 #             await i.add_roles(role)
 #             break
+
+@bot.command()
+async def update(ctx):
+    file = open("help_text/latest_patch.txt", "r")
+    data = file.read()
+    await ctx.channel.send(data)
 
 # Removes every paid role at the 10th of every month
 async def remove_all():

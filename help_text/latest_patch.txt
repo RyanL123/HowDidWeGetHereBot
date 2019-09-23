@@ -1,0 +1,5 @@
+>>> **2019/Sep/23**
+
+- Implemented %update command
+
+- Added documentation for %paid & %update

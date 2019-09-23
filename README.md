@@ -93,4 +93,42 @@ Or
 **Output**
 >  https://minecraft.gamepedia.com/ + (input)
 
+## Show people committing tax fraud (%paid)
+
+### Parameters (None)
+
+### Functionality
+
+**What it does**
+
+- Tag everyone who doesn't have the paid role
+- Automatically removes everyone's paid role at the start of the month
+
+**What it can't do**
+
+- Give people the paid role
+- Arrest them
+
+**Output**
+> @HowDidWeGetHereBot has not paid this month!
+
+Or
+
+> :tada: Everybody paid this month!
+
+## Show latest update (%update)
+
+### Parameters (None)
+
+### Functionality
+
+**What it does**
+
+- Show the latest update to the bot
+
+**What it can't do**
+
+- Check any patches other than the latest update
+
+
 ### Alternatively, run the %help command to see what each command does.

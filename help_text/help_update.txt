@@ -1,0 +1,11 @@
+>>> **Show latest update (%update)**
+
+**Parameters (None)**
+
+**What it does**
+
+- Show the latest update to the bot
+
+**What it can't do**
+
+- Check any patches other than the latest update
