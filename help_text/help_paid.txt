@@ -19,4 +19,4 @@
 
 Or
 
-tada: Everybody paid this month!
+:tada: Everybody paid this month!
