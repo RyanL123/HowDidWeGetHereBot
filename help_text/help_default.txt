@@ -1,8 +1,6 @@
 >>> **Use %help (command) for a in depth description of the command**
 
-**%status:** Shows if the server is online
-
-**%online:** Shows number of players online
+**%status:** Shows if the server is online, and players in the server
 
 **%craft <item>**: Shows the crafting recipe for the item
 

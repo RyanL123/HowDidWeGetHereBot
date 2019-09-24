@@ -6,6 +6,8 @@
 
 - Shows the ping of the server
 
+- Shows the names of every player in the server
+
 **What it can't do**
 
 - Get the status of any other server (not configurable)
@@ -14,6 +16,11 @@
 
 **Output**
 :white_check_mark: Server is online with a ping of (milliseconds) ms
+
+There are x/25 players on the server:
+Player1
+Player2
+...
 
 Or
 

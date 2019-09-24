@@ -19,6 +19,8 @@ including the hidden "How Did We Get Here?" achievement.
 
 - Shows whether if the server is online or offline
 - Shows the ping of the server
+- Shows the names of every player in the server
+
 
 **What it can't do**
 
@@ -27,28 +29,18 @@ including the hidden "How Did We Get Here?" achievement.
 
 **Output**
 > :white_check_mark: Server is online with a ping of (milliseconds) ms
+>
+>There are x/25 players on the server:
+>
+> Player1
+>
+> Player2
+>
+> ...
 
 Or 
 
 > :x: Server is offline
-
-## Show Players Online (%online)
-
-### Parameters (None)
-
-### Functionality
-
-**What it does**
-
-- Shows the number of players in the server
-
-**What it can't do**
-
-- Get the specific player names of each person in the server
-- Who is afk and who isn't
-
-**Output**
-> There are x players on the server
 
 ## Show Recipe (%craft)
 

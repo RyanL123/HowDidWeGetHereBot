@@ -1,5 +1,5 @@
->>> **2019/Sep/23**
+>>> **2019/Sep/24**
 
-- Implemented %update command
+- Removed %online command
 
-- Added documentation for %paid & %update
+- %status now shows the amount of players online and their names

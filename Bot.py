@@ -24,10 +24,6 @@ async def help(ctx, arg="default"):
         file = open("help_text/help_default.txt", "r")
         data = file.read()
         await ctx.channel.send(data)
-    elif arg == "online":
-        file = open("help_text/help_online.txt", "r")
-        data = file.read()
-        await ctx.channel.send(data)
     elif arg == "craft":
         file = open("help_text/help_craft.txt", "r")
         data = file.read()
@@ -53,19 +49,6 @@ async def help(ctx, arg="default"):
 
     print("help")
 
-# How many players are online on the server
-@bot.command(name='online')
-async def online(ctx):
-    try:
-        response = server.status().players.online
-        if response == 1:
-            await ctx.channel.send("There is 1 player on the server")
-        else:
-            await ctx.channel.send("There are %i players on the server" % response)
-    except:
-        await ctx.channel.send("Error")
-    print("online")
-
 # Shows crafting recipe for item, gets image from minecraftcrafting.info
 @bot.command(name='craft')
 async def craft(ctx, *arg):
@@ -90,13 +73,27 @@ async def craft(ctx, *arg):
     print("craft")
 
 # Checks whether the server is online or offline and outputs the ping
+# Also outputs who is on the server
 @bot.command(name='status')
 async def status(ctx):
+    status = server.status()
+    players = status.players.sample
+    output = ">>> "
     try:
-        response = server.ping()
-        await ctx.channel.send(":white_check_mark: Server is online with a ping of %.2fms" % response)
+        ping = server.ping()
+        output += (":white_check_mark: Server is online with a ping of %.2fms\n\n" % ping)
+        if players is not None:
+            if len(players) == 1:
+                output += ("**There is 1/%s players on the server:**\n" % status.players.max)
+            else:
+                output += ("**There are %s/%s players on the server:**\n" % (status.players.online, status.players.max))
+            for i in players:
+                output += ("%s\n" % i.name)
+        else:
+            output += "**No one is on the server**"
     except:
-        await ctx.channel.send(":x: Server is offline")
+        output += ctx.channel.send(":x: Server is offline")
+    await ctx.channel.send(output)
     print("status")
 
 
@@ -118,7 +115,7 @@ async def status(ctx, *arg):
     print("wiki")
 
 # Notifies everyone who hasn't paid this month yet
-@bot.command(pass_contex=True)
+@bot.command(pass_context=True)
 async def paid(ctx):
     message_server = ctx.message.guild
 

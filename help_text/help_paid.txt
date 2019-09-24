@@ -1,6 +1,4 @@
->>> Show people committing tax fraud (%paid)
-
-**Parameters (None)**
+>>> **Parameters (None)**
 
 **What it does**
 
