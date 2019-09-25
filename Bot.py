@@ -76,23 +76,23 @@ async def craft(ctx, *arg):
 # Also outputs who is on the server
 @bot.command(name='status')
 async def status(ctx):
-    status = server.status()
-    players = status.players.sample
     output = ">>> "
     try:
+        status = server.status()
         ping = server.ping()
+        players = status.players.sample
         output += (":white_check_mark: Server is online with a ping of %.2fms\n\n" % ping)
         if players is not None:
             if len(players) == 1:
-                output += ("**There is 1/%s players on the server:**\n" % status.players.max)
+                output += ("**There is 1/%s max players on the server:**\n" % status.players.max)
             else:
-                output += ("**There are %s/%s players on the server:**\n" % (status.players.online, status.players.max))
+                output += ("**There are %s/%s max players on the server:**\n" % (status.players.online, status.players.max))
             for i in players:
                 output += ("%s\n" % i.name)
         else:
             output += "**No one is on the server**"
     except:
-        output += ctx.channel.send(":x: Server is offline")
+        output += ":x: Server is offline"
     await ctx.channel.send(output)
     print("status")
 

@@ -1,5 +1,5 @@
->>> **2019/Sep/24**
+>>> **2019/Sep/25**
 
-- Removed %online command
+- Fixed a problem where %status would not respond when the server is offline
 
-- %status now shows the amount of players online and their names
+- Fixed grammatical errors

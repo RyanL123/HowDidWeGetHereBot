@@ -30,7 +30,7 @@ including the hidden "How Did We Get Here?" achievement.
 **Output**
 > :white_check_mark: Server is online with a ping of (milliseconds) ms
 >
->There are x/25 players on the server:
+>There are x/25 max players on the server:
 >
 > Player1
 >
