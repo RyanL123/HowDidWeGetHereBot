@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None)
 async def on_ready():
     print('Logged on as {0}!'.format(bot.user))
     await bot.change_presence(activity=discord.Game(name="%help | %update"))
-    test.start()
+    remove_paid.start()
 
 # Help command
 @bot.command()
@@ -133,22 +133,12 @@ async def paid(ctx):
     if all_paid:
         await ctx.channel.send(":tada: Everybody paid this month!")
 
-
-# @bot.command(name='role', pass_context=True)
-# async def give_role(ctx, member: discord.Member):
-#     message_server = ctx.message.guild
-#     member_id = member.id
-#     for i in message_server.members:
-#         if i.id == member_id:
-#             role = get(message_server.roles, name="Test")
-#             await i.add_roles(role)
-#             break
-
 @bot.command()
 async def update(ctx):
     file = open("help_text/latest_patch.txt", "r")
     data = file.read()
     await ctx.channel.send(data)
+
 
 # Removes every paid role at the 10th of every month
 async def remove_all():
@@ -160,7 +150,7 @@ async def remove_all():
 
 
 @tasks.loop(hours=1)
-async def test():
+async def remove_paid():
     time = datetime.datetime.now()
     hour = int(time.hour)
     day = int(time.day)
