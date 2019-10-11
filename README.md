@@ -93,7 +93,7 @@ Or
 
 **What it does**
 
-- Tag everyone who doesn't have the paid role
+- Display everyone who doesn't have the paid role
 - Automatically removes everyone's paid role at the start of the month
 
 **What it can't do**

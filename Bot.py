@@ -128,7 +128,7 @@ async def paid(ctx):
     for member in message_server.members:
         if bot_id not in member.roles and paid_id not in member.roles:
             member_id = member.id
-            await ctx.channel.send("<@%i> has not paid this month!" % member_id)
+            await ctx.channel.send("%s has not paid this month!" % member.display_name)
             all_paid = False
     if all_paid:
         await ctx.channel.send(":tada: Everybody paid this month!")

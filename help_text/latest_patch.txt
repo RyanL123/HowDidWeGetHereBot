@@ -1,5 +1,3 @@
->>> **2019/Sep/25**
+>>> **2019/Oct/10**
 
-- Fixed a problem where %status would not respond when the server is offline
-
-- Fixed grammatical errors
+- The %paid command no longer tags people and now displays their nickname instead
