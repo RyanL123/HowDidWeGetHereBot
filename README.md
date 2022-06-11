@@ -9,17 +9,16 @@ including the hidden "How Did We Get Here?" achievement.
 
 # Installation
 
-1. Create config.py file
+1. Create .env file
 2. Populate with server and bot token
-```python
-server_ip="SERVER_IP"
-server_port=1234 # This needs to be an integer not string
-api_key="API_KEY"
+```
+server_ip=SERVER_IP
+server_port=SERVER_PORT
+api_key=API_KEY
 ```
 3. Run the bot
 ```
-docker build -t mcbot
-docker run -it mcbot
+docker-compose up
 ```
 
 
