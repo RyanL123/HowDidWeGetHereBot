@@ -1,12 +1,12 @@
 import discord
 import requests
 from config import *
-from mcstatus import MinecraftServer
+from mcstatus import JavaServer
 from discord.ext import commands, tasks
 from discord.utils import get
 import datetime
 
-server = MinecraftServer(server_ip, server_port)
+server = JavaServer(server_ip, server_port)
 prefix = "%"
 bot = commands.Bot(command_prefix=prefix, help_command=None)
 

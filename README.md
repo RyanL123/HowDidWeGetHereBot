@@ -7,6 +7,22 @@ the specific server and is not configurable. The aim of
 the Minecraft Server is to obtain every achievement,
 including the hidden "How Did We Get Here?" achievement.
 
+# Installation
+
+1. Create config.py file
+2. Populate with server and bot token
+```python
+server_ip="SERVER_IP"
+server_port=1234 # This needs to be an integer not string
+api_key="API_KEY"
+```
+3. Run the bot
+```
+docker build -t mcbot
+docker run -it mcbot
+```
+
+
 # Commands (Used with % prefix)
 
 ## Show Server Status (%status)
