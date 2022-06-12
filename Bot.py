@@ -11,14 +11,14 @@ server_ip = str(os.getenv("SERVER_IP"))
 server_port = int(os.getenv("SERVER_PORT"))
 
 server = JavaServer(server_ip, server_port)
-prefix = "/"
+prefix = "."
 bot = commands.Bot(command_prefix=prefix, help_command=None)
 
 # Bot is ready
 @bot.event
 async def on_ready():
     print('Logged on as {0}!'.format(bot.user))
-    await bot.change_presence(activity=discord.Game(name="/ping"))
+    await bot.change_presence(activity=discord.Game(name=".ping"))
     # remove_paid.start()
 
 # # Help command
